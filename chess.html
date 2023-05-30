@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .white {
+        background-color: white;
+        width: 100px;
+        height: 100px;
+    }
+    .black {
+        background-color: black;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+
+
+    <table id="root" border="1"></table>
+    <script type="text/javascript">
+        let root = document.getElementById('root');
+        for (let l = 1; l <= 8; l++) {
+            let tr = document.createElement('tr');
+            if (l % 2 == 0) {
+                for (let col = 1; col <= 8; col++) {
+                    let td = document.createElement('td');
+                    if (col % 2 == 1) {
+                        td.setAttribute('class', 'white');
+                    } else {
+                        td.setAttribute('class', 'black');
+                    }
+                    tr.appendChild(td);
+                }
+            }else{
+                for (let col = 1; col <= 8; col++) {
+                    let td = document.createElement('td');
+                    if (col % 2 == 0) {
+                        td.setAttribute('class', 'white');
+                    } else {
+                        td.setAttribute('class', 'black');
+                    }
+                    tr.appendChild(td);
+                }
+            }
+            root.appendChild(tr);
+        }
+    </script>
+</body>
+
+
+</html>
